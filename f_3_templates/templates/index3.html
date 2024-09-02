@@ -14,7 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            /* height: 100vh; */
         }
         .container {
             text-align: center;
@@ -42,11 +42,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>List of Fruits</h1>
+        <h1>List of Surah</h1>
         <ul>
-            <!-- Loop through the array passed from the app and display each item -->
-            {% for fruit in fruits %}
-                <li>{{ fruit }}</li>
+            
+            {% for surah in surah %}
+                <li>{{ surah }}</li>
             {% endfor %}
         </ul>
     </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask Template Example</title>
+    <title>Flask Template with For Loop</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            /* height: 100vh; */
         }
         .container {
             text-align: center;
@@ -25,21 +25,29 @@
         }
         h1 {
             color: #2c3e50;
+            margin-bottom: 20px;
         }
-        p {
-            font-size: 1.2em;
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #3498db;
+            color: white;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Flask!</h1>
-        <p>The value is: <strong>{{ myvalue }}</strong></p>
-        <p>The result of 10 + 20 is: <strong>{{ myresult }}</strong></p>
-        <p>the result of 20 * 3 is: <b>{{result}}</b> </p>
-        <p>We are learning {{course}}</p>
-        <p>i am {{name}}</p>
-        
+        <h1>List of Surah</h1>
+        <ul>
+            {% for s in surah %}
+            <li>{{ s }}</li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>

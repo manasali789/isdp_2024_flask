@@ -3,43 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask Template Example</title>
+    <title>Flask Template with For Loop</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: wheat;
             color: #333;
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            /* height: 100vh; */
         }
         .container {
             text-align: center;
-            background-color: #fff;
+            background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
             color: #2c3e50;
+            margin-bottom: 20px;
         }
-        p {
-            font-size: 1.2em;
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: rgb(24, 94, 94);
+            color: white;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Flask!</h1>
-        <p>The value is: <strong>{{ myvalue }}</strong></p>
-        <p>The result of 10 + 20 is: <strong>{{ myresult }}</strong></p>
-        <p>the result of 20 * 3 is: <b>{{result}}</b> </p>
-        <p>We are learning {{course}}</p>
-        <p>i am {{name}}</p>
-        
+        <h1>Top 20 Cars List</h1>
+        <ul>
+            <!-- Loop through the array passed from the app and display each item -->
+            {% for car in cars %}
+                <li>{{ car }}</li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>

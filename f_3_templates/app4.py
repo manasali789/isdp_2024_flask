@@ -2,10 +2,9 @@ from flask import Flask, render_template
 
 app = Flask(__name__, template_folder='templates')
 
-@app.route('/')
+@app. route('')
 def index():
-    # Array to be passed to the template
-   surah_names = [
+    surah_names = [
     "Al-Fatiha", "Al-Baqarah", "Aali Imran", "An-Nisa", "Al-Ma'idah", "Al-An'am",
     "Al-A'raf", "Al-Anfal", "At-Tawbah", "Yunus", "Hud", "Yusuf", "Ar-Ra'd", "Ibrahim",
     "Al-Hijr", "An-Nahl", "Al-Isra", "Al-Kahf", "Maryam", "Ta-Ha", "Al-Anbiya",
@@ -25,8 +24,8 @@ def index():
     "Al-Ma'un", "Al-Kawthar", "Al-Kafirun", "An-Nasr", "Al-Masad", "Al-Ikhlas", "Al-Falaq", 
     "An-Nas"
 ]
-
-   return render_template('index3.html', surah=surah_names)
+    
+    return render_template('index4.html', surah=surah_names)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
