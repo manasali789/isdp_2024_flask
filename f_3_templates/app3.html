@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Template with For Loop Explanation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.1em;
+            color: #e74c3c;
+        }
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Using For Loops in Flask Templates</h1>
+
+        <h2>Introduction to Templates in Flask</h2>
+        <p>Flask allows you to use templates to render HTML dynamically based on the data provided by your Python code. Templates in Flask are powered by the Jinja2 template engine, which provides features such as template inheritance, conditional statements, loops, and more.</p>
+
+        <h2>Passing Data from Flask to Templates</h2>
+        <p>In Flask, you can pass data from your routes (Python functions) to the HTML templates. This is done using the <code>render_template()</code> function, which takes the name of the template file and any data you want to pass as keyword arguments.</p>
+        <p>For example, you can pass an array from your Python code to an HTML template and then use a loop in the template to display each item in that array.</p>
+
+        <h2>Example Code</h2>
+        <h3>Python Code (<code>app.py</code>)</h3>
+        <p>Here’s an example of how to pass an array of fruits from your Flask application to an HTML template:</p>
+        <code>
+            from flask import Flask, render_template<br><br>
+            app = Flask(__name__, template_folder='templates')<br><br>
+            @app.route('/')<br>
+            def index():<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;myarray = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry']<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return render_template('index.html', fruits=myarray)<br><br>
+            if __name__ == '__main__':<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;app.run(host='0.0.0.0', debug=True)
+        </code>
+        <p>In this code:</p>
+        <ul>
+            <li><code>myarray</code> is a list of fruit names.</li>
+            <li>This list is passed to the template <code>index.html</code> with the keyword <code>fruits</code>.</li>
+        </ul>
+
+        <h3>HTML Template (<code>index.html</code>)</h3>
+        <p>In your HTML template, you can loop through the array and display each item using a <code>for</code> loop in Jinja2 syntax:</p>
+       
+        <h2>Understanding the Code</h2>
+        <p>In the HTML template:</p>
+        <ul>
+            <li>The <code>{% for fruit in fruits %}</code> syntax is a Jinja2 loop that iterates over each item in the <code>fruits</code> array passed from the Flask application.</li>
+            <li>For each iteration, the current item (fruit name) is displayed within a <code>&lt;li&gt;</code> element.</li>
+        </ul>
+
+        <h2>Running the Application</h2>
+        <p>To run the application:</p>
+        <ul>
+            <li>Save the Python code in a file named <code>app.py</code>.</li>
+            <li>Create a directory named <code>templates</code> and save the HTML code in a file named <code>index.html</code> inside this directory.</li>
+            <li>Run the Flask application using the command: <code>python app.py</code>.</li>
+            <li>Open your web browser and go to <code>http://localhost:5000</code> to see the dynamically generated list of fruits.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>This example shows how to pass data from your Flask application to an HTML template and use a <code>for</code> loop in the template to render dynamic content. This is a powerful feature of Flask that allows you to create dynamic, data-driven web pages with ease.</p>
+    </div>
+</body>
+</html>

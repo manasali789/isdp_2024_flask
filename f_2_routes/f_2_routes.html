@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Routes Explanation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.1em;
+            color: #e74c3c;
+        }
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Introduction to Flask Routes</h1>
+
+        <p>In Flask, a route is a URL pattern that the application recognizes. Each route is linked to a view function, which Flask executes when someone visits the associated URL. This is how Flask maps URLs to the functions that handle them.</p>
+
+        <h2>How Routes Work</h2>
+        <p>Routes are defined using the <code>@app.route()</code> decorator. The route decorator tells Flask which URL should trigger a particular function. The function then returns the content that will be displayed in the user’s browser.</p>
+
+        <p>For example:</p>
+        <code>@app.route('/')<br>def index():<br> &nbsp;&nbsp;&nbsp;&nbsp;return "Hello World"</code>
+        <p>This code sets up a route for the root URL ('/'). When the user visits the home page of the Flask app, the message "Hello World" will be displayed.</p>
+
+        <h2>Advanced Routes</h2>
+        <p>Flask routes can also handle dynamic content by accepting parameters directly from the URL. You can define routes that process these parameters and return responses based on the input. Below are some examples of advanced routes:</p>
+
+        <h2>1. The <code>/salam</code> Route</h2>
+        <p><code>@app.route('/salam')</code>: This route responds to the URL <code>/salam</code>. When a user visits this URL, the server responds with a greeting in Arabic, "السلام علیکم".</p>
+
+        <h2>2. The <code>/greet/&lt;name&gt;</code> Route</h2>
+        <p><code>@app.route('/greet/&lt;name&gt;')</code>: This route is dynamic because it takes a variable <code>&lt;name&gt;</code> from the URL. Whatever name is provided in the URL, the function will return a personalized greeting using that name.</p>
+        <p>Example: If a user visits <code>/greet/Ali</code>, the response will be "السلام علیکم Ali". This demonstrates how Flask can use URL parameters to generate dynamic content.</p>
+
+        <h2>3. The <code>/square/&lt;int:num&gt;</code> Route</h2>
+        <p><code>@app.route('/square/&lt;int:num&gt;')</code>: This route also takes a variable from the URL, but this time it's an integer <code>&lt;num&gt;</code>. The route calculates the square of the number provided and returns the result in a message.</p>
+        <p>Example: If a user visits <code>/square/4</code>, the response will be "The sum of 4 = 16". This shows how Flask can perform calculations based on input directly from the URL.</p>
+
+        <h2>4. Running the Flask Application</h2>
+        <p>The application is started with the same command as before:</p>
+        <p><code>app.run(host='0.0.0.0', debug=True)</code></p>
+        <p>This runs the Flask development server, making the routes accessible. The <code>debug=True</code> parameter ensures that the server provides detailed error messages and reloads automatically when changes are made to the code.</p>
+
+        <h2>Conclusion</h2>
+        <p>This session introduces the concept of routes in Flask and demonstrates how to create both static and dynamic routes. With these tools, you can build interactive web applications that respond to user input in various ways.</p>
+    </div>
+</body>
+</html>

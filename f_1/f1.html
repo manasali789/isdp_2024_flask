@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Basics Explanation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.1em;
+            color: #e74c3c;
+        }
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Flask "Hello World" Application Explanation</h1>
+
+        <h2>1. Importing Flask</h2>
+        <p><code>from flask import Flask</code>: This imports the <strong>Flask</strong> class from the <strong>flask</strong> module. Flask is a web framework, which means it's a collection of modules and libraries that helps you build web applications in Python.</p>
+
+        <h2>2. Creating an Instance of Flask</h2>
+        <p><code>app = Flask(__name__)</code>: This creates an instance of the Flask class. The variable <code>__name__</code> is passed to the Flask class so that Flask knows where to find resources like templates and static files. <code>app</code> is the name of the Flask application object.</p>
+
+        <h2>3. Defining a Route</h2>
+        <p><code>@app.route('/')</code>: This is a route decorator that maps the URL <code>'/'</code> (the root URL) to the <code>index</code> function. A route is a URL pattern that the application recognizes. When someone visits <code>http://localhost:5555/</code>, the function below this decorator will be executed.</p>
+
+        <h2>4. Creating a View Function</h2>
+        <p><code>def index():</code> This is the function that will be executed when the root URL is accessed. The function returns an HTML string that will be displayed in the web browser.</p>
+        <p><code>return "&lt;h1&gt;Hello World&lt;/h1&gt;"</code>: This line of code returns an HTML header that says "Hello World". It will be displayed in the browser when the root URL is accessed.</p>
+
+        <h2>5. Running the Flask Application</h2>
+        <p><code>if __name__ == '__main__':</code> This block ensures that the Flask app runs only if the script is executed directly, and not when it's imported as a module in another script. This is a common Python idiom.</p>
+        <p><code>app.run(host='0.0.0.0', port=5555, debug=True)</code>: This command runs the Flask development server. The parameters specify the following:</p>
+        <ul>
+            <li><strong>host='0.0.0.0'</strong>: This tells the operating system to listen on all public IP addresses of the machine, making the app accessible from other computers on the network.</li>
+            <li><strong>port=5555</strong>: This specifies the port number where the Flask app will be accessible. In this case, it's port 5555.</li>
+            <li><strong>debug=True</strong>: This enables debug mode, which provides helpful error messages and allows for automatic reloading when the code changes.</li>
+        </ul>
+
+        <h2>How to Run the Application</h2>
+        <p>1. Save the code to a file named <code>app.py</code>.</p>
+        <p>2. Open your terminal and navigate to the directory where <code>app.py</code> is saved.</p>
+        <p>3. Run the following command: <code>python app.py</code></p>
+        <p>4. Open your web browser and go to <code>http://localhost:5555</code> to see the "Hello World" message.</p>
+
+        <h2>Conclusion</h2>
+        <p>This is a basic Flask application that demonstrates the essential components of a Flask web app. From here, you can expand by adding more routes, templates, and static files to create more complex applications.</p>
+    </div>
+</body>
+</html>
